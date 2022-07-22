@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 
 namespace Poke_Mon
@@ -35,3 +36,42 @@ namespace Poke_Mon
         }
     }
 }
+=======
+﻿using System;
+
+namespace Poke_Mon
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int pokemonPower = int.Parse(Console.ReadLine());
+            int distance = int.Parse(Console.ReadLine());
+            int exhaustionFactory = int.Parse(Console.ReadLine());
+
+            int targetsPoked = 0;
+
+            double originalValue = pokemonPower * 0.50;
+
+            while (pokemonPower >= distance)
+            {
+                if (pokemonPower == originalValue)
+                {
+                    if (exhaustionFactory > 0)
+                    {
+                        pokemonPower = pokemonPower / exhaustionFactory;
+                        if (pokemonPower < distance)
+                        {
+                            break;
+                        }
+                    }
+                }
+                pokemonPower -= distance;
+                targetsPoked++;
+            }
+            Console.WriteLine(pokemonPower);
+            Console.WriteLine(targetsPoked);
+        }
+    }
+}
+>>>>>>> 2ec66682fb48c90532421c6969194d8974e888a4
